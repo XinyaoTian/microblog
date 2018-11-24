@@ -1,0 +1,8 @@
+{% extends "naviBar.html" %}
+
+{% block content %}
+        <h1>Hello, {{ user.username }}!</h1>
+        {% for comment in comments %}
+        <div> <p>{{ comment.author }} says: {{comment.body}}</p> </div>
+        {% endfor %}
+{% endblock %}

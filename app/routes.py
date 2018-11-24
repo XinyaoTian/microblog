@@ -24,3 +24,14 @@ def loopEg():
     user = {'username': 'Winchester'}
 
     return render_template('loopEg.html', user=user, comments=comments_list)
+
+@app.route('/welcomePage')
+def welcome():
+    comments_list = [
+        {'author': 'Mike', 'body': 'Good day is today.'},
+        {'author': 'Tim', 'body': 'Beijing is a beautiful city!'}
+    ]
+
+    user = {'username': 'Winchester'}
+
+    return render_template('welcomePage.html', user=user, comments=comments_list)
