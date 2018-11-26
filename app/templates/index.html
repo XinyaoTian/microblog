@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<!--
-    title
-    user.username
- -->
-<html lang="utf-8">
-    <head>
-        <title>{{ title }} - Microblog</title>
-    </head>
-    <body>
+{% extends "naviBar.html" %}
+
+{% block content %}
         <h1>Hello, {{ user.username }}!</h1>
-    </body>
-</html>
+        {% for comment in comments %}
+        <div> <p>{{ comment.author }} says: {{comment.body}}</p> </div>
+        {% endfor %}
+{% endblock %}
