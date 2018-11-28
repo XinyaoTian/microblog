@@ -6,6 +6,8 @@ from app import login
 from werkzeug.security import generate_password_hash, check_password_hash
 # for login function
 from flask_login import UserMixin
+# for user avatar
+from hashlib import md5
 
 # return unique user id
 # The user loader is registered with Flask-Login with the @login.user_loader decorator.
@@ -33,6 +35,12 @@ class User(UserMixin, db.Model):
     # The __repr__ method tells Python how to print objects of this class
     def __repr__(self):
         return '<User {}>'.format(self.username)
+
+    # Generate avatar
+    def avatar(self, size):
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, size)
+
 
 
 # moduel of post table
