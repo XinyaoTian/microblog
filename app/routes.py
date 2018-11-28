@@ -19,13 +19,27 @@ from flask_login import login_required
 from flask import request
 from werkzeug.urls import url_parse
 
+# for recording time last visited
+from datetime import datetime
+
 from app.forms import LoginForm
 from app.forms import RegistrationForm
+
 
 # @app.route('/')
 # def hello():
 #     user = {'username':'Daniel'}
 #     return render_template('indexSmart.html', user=user)
+
+# I can insert code that I want to execute
+#  before any view function in the application
+# by using the decorate @before_request
+@app.before_request
+def before_request():
+    if current_user.is_authenticated:
+        current_user.last_seen = datetime.utcnow()
+        db.session.add(current_user) # which is not necessary cause current user is already there
+        db.session.commit()
 
 @app.route('/index')
 def index():

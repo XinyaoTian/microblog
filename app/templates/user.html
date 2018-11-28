@@ -5,17 +5,16 @@
         <tr valign="top">
             <!-- Generate user avatar -->
             <td><img src="{{ user.avatar(128) }}"></td>
-            <td><h1>User:{{ user.username }}</h1></td>
+            <td>
+                <h1>User:{{ user.username }}</h1>
+                {% if user.about_me %} <p>{{ user.about_me }}</p> {% endif %}
+                {% if user.last_seen %} <p>Last seen on: {{ user.last_seen }}</p>{% endif %}
+            </td>
         </tr>
     </table>
     <hr>
     {% for post in posts %}
-        <table>
-            <tr valign="top">
-                <!-- A small size of avatar-->
-                <td><img src="{{ post.author.avatar(36) }}"></td>
-                <td>{{ post.author.username }} says: <b>{{ post.body }}</b></td>
-            </tr>
-        </table>
+        <!-- sub-template in Jinja2 -->
+       {% include '_post.html' %}
     {% endfor %}
 {% endblock %}

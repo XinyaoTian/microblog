@@ -24,6 +24,14 @@ class User(UserMixin, db.Model):
     # Relation to Post moduel
     posts = db.relationship('Post', backref='author', lazy='dynamic')
 
+    # New function of self-introduction
+    about_me = db.Column(db.String(140))
+    last_seen = db.Column(db.DateTime, default=datetime.utcnow)
+    # Remember, Every time the database is modified ,
+    # it is necessary to generate a database migration.
+    # $ flask db migrate -m "some comments..."
+    # $ flask db upgrade
+
     # The whole password hashing logic can be implemented as two new methods in the user model:
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
