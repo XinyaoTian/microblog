@@ -85,3 +85,4 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 2018-12-03 14:16:49,257 INFO: Microblog startup [in /Users/xinyaotian/Code/Python_Codes/flask_learning/microblog/app/__init__.py:54]
 2018-12-03 14:16:53,972 INFO: Microblog startup [in /Users/xinyaotian/Code/Python_Codes/flask_learning/microblog/app/__init__.py:54]
 2018-12-03 14:16:58,405 INFO: Microblog startup [in /Users/xinyaotian/Code/Python_Codes/flask_learning/microblog/app/__init__.py:54]
+2018-12-03 14:44:34,330 INFO: Microblog startup [in /Users/xinyaotian/Code/Python_Codes/flask_learning/microblog/app/__init__.py:54]
