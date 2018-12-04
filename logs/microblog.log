@@ -76,3 +76,4 @@ Traceback (most recent call last):
     page, app.config['POST_PER_PAGE'], False)
 KeyError: 'POST_PER_PAGE'
 2018-12-04 11:10:33,818 INFO: Microblog startup [in /Users/xinyaotian/Code/Python_Codes/flask_learning/microblog/app/__init__.py:54]
+2018-12-04 11:50:08,070 INFO: Microblog startup [in /Users/xinyaotian/Code/Python_Codes/flask_learning/microblog/app/__init__.py:54]
