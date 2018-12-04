@@ -1,6 +1,7 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+
 class Config(object):
     # Security token
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'abcdef'
@@ -18,3 +19,7 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     # ADMINS = ['your-email@example.com']
     ADMINS = ['leontian1024@gmail.com']
+
+    # determines how many items will be displayed per page
+
+    POSTS_PER_PAGE = 3

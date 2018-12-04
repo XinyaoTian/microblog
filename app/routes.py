@@ -26,6 +26,10 @@ from app.forms import LoginForm
 from app.forms import RegistrationForm
 from app.forms import EditProfileForm
 
+# post submission
+from app.forms import PostForm
+from app.models import Post
+
 
 # @app.route('/')
 # def hello():
@@ -62,22 +66,35 @@ def loopEg():
 
 
 # Never Use Capital Letters in URLs ! No 'welcomePage' !
-@app.route('/')
-@app.route('/welcome')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/welcome', methods=['GET', 'POST'])
 @login_required
 def welcome():
-    # comments_list = [
-    #     {'author': 'Mike', 'body': 'Good day is today.'},
-    #     {'author': 'Tim', 'body': 'Beijing is a beautiful city!'}
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(body=form.post.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post is now live')
+        return redirect(url_for('welcome'))
+    # posts = [
+    #     {
+    #         'author': {'username': 'John'},
+    #         'body': 'Beautiful day in Portland!'
+    #     },
+    #     {
+    #         'author': {'username': 'Susan'},
+    #         'body': 'The Avengers movie was so cool.'
+    #     }
     # ]
-    #
-    # user = {'username': 'Winchester'}
-    posts = [
-        {'author': 'Mike', 'body': 'Good day is today.'},
-        {'author': 'Tim', 'body': 'Beijing is a beautiful city!'}
-    ]
+    page = request.args.get('page', 1, type=int)
+    # posts = current_user.followed_posts().all()
+    posts = current_user.followed_posts().paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
 
-    return render_template('welcomePage.html', title='Home Page', posts=posts)
+    # The template receives the form object as an additional argument
+    return render_template('welcomePage.html', title='Home Page',
+                           form=form, posts=posts.items)
 
 
 # a fake login function
@@ -192,3 +209,17 @@ def unfollow(username):
     db.session.commit()
     flash('You are not following {}.'.format(username))
     return redirect(url_for('user', username=username))
+
+
+# explore view function
+@app.route('/explore')
+@login_required
+def explore():
+    # Add pagination
+    page = request.args.get('page', 1, type=int)
+    # pagination function
+    # change the '.all()' to '.pagination()' and return 'posts.items' instead of 'posts'
+    # posts = Post.query.order_by(Post.timestamp.desc()).all()
+    posts = Post.query.order_by(Post.timestamp.desc()).paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    return render_template('welcomePage.html', title='Explore', posts=posts.items)

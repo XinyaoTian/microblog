@@ -2,7 +2,25 @@
 
 {% block content %}
         <h1>Hello, {{ current_user.username }}!</h1>
+        <!-- For template reuse -->
+        {% if form %}
+            <form action="" method="post">
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.post.label }}<br>
+                    {{ form.post(cols=32, rows=4) }}<br>
+                    {% for error in form.post.errors %}
+                        <span style="color:red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>{{ form.submit() }}</p>
+            </form>
+        {% endif %}
+        <!-- end -->
         {% for post in posts %}
-        <div> <p>{{ post.author }} says: {{post.body}}</p> </div>
+{#            <p>#}
+{#            {{ post.author.username }} says: <b>{{ post.body }}</b>#}
+{#            </p>#}
+            {% include '_post.html' %}
         {% endfor %}
 {% endblock %}
