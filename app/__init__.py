@@ -7,6 +7,8 @@ from flask_login import LoginManager
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
+# email support
+from flask_mail import Mail
 
 app = Flask(__name__)
 
@@ -24,6 +26,9 @@ login = LoginManager(app)
 
 # force login or the user will not view other pages
 login.login_view = 'login' # login url
+
+# email support
+mail = Mail(app)
 
 # Using SMTP to send email
 if not app.debug:
