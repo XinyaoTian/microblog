@@ -9,6 +9,10 @@ from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 # email support
 from flask_mail import Mail
+# Deal with time in different regions
+from flask_moment import Moment
+# Flask Bootstrap for web page
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
 
@@ -29,6 +33,12 @@ login.login_view = 'login' # login url
 
 # email support
 mail = Mail(app)
+
+# for web page
+bootstrap = Bootstrap(app)
+
+# timezone solution
+moment = Moment(app)
 
 # Using SMTP to send email
 if not app.debug:

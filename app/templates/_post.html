@@ -1,8 +1,8 @@
-    <table>
+    <table class="table table-hover">
         <!--I can now use this sub-template to render blog posts
          in the home and explore pages-->
         <tr valign="top">
-            <td><img src="{{ post.author.avatar(36) }}"></td>
+            <td width="70px"><img src="{{ post.author.avatar(70) }}"></td>
             <td>
                 <a href="{{ url_for('user', username=post.author.username) }}">
                     {{ post.author.username }}
@@ -11,3 +11,16 @@
             </td>
         </tr>
     </table>
+{#    <table>#}
+{#        <!--I can now use this sub-template to render blog posts#}
+{#         in the home and explore pages-->#}
+{#        <tr valign="top">#}
+{#            <td><img src="{{ post.author.avatar(36) }}"></td>#}
+{#            <td>#}
+{#                <a href="{{ url_for('user', username=post.author.username) }}">#}
+{#                    {{ post.author.username }}#}
+{#                </a>#}
+{#                says:<br>{{ post.body }}#}
+{#            </td>#}
+{#        </tr>#}
+{#    </table>#}
