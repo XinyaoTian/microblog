@@ -37,6 +37,7 @@ mail = Mail(app)
 # for web page
 bootstrap = Bootstrap(app)
 
+
 # timezone solution
 moment = Moment(app)
 
