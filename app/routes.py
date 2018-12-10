@@ -34,6 +34,13 @@ from app.models import Post
 from app.forms import ResetPasswordRequestForm
 from app.email import send_password_reset_email
 
+# I18n & L10n
+from flask_babel import _
+
+# for month and time translation
+from flask import g
+from flask_babel import get_locale
+
 
 # @app.route('/')
 # def hello():
@@ -49,6 +56,8 @@ def before_request():
         current_user.last_seen = datetime.utcnow()
         db.session.add(current_user) # which is not necessary cause current user is already there
         db.session.commit()
+        # for translate English month
+        g.locale = str(get_locale())
 
 
 @app.route('/index')
@@ -79,7 +88,7 @@ def welcome():
         post = Post(body=form.post.data, author=current_user)
         db.session.add(post)
         db.session.commit()
-        flash('Your post is now live')
+        flash(_('Your post is now live'))
         return redirect(url_for('welcome'))
     # posts = [
     #     {
@@ -125,7 +134,7 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password')
+            flash(_('Invalid username or password'))
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
         # the page will be redirect after login
@@ -148,7 +157,7 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
+        flash(_('Congratulations, you are now a registered user!'))
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
@@ -189,7 +198,7 @@ def edit_profile():
         current_user.about_me = form.about_me.data
         db.session.add(current_user)
         db.session.commit()
-        flash('Your changes have been saved.')
+        flash(_('Your changes have been saved.'))
         return redirect(url_for('edit_profile'))
     elif request.method == 'GET':
         form.username.data = current_user.username
@@ -202,14 +211,17 @@ def edit_profile():
 def follow(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
-        flash('User {} not found.'.format(username))
+        # flash('User {} not found.'.format(username))
+        # I18n & L10n
+        flash(_('User %(username)s not found.', username=username))
         return redirect(url_for('welcome'))
     if user == current_user:
-        flash('You cannot follow yourself!')
+        flash(_('You cannot follow yourself!'))
         return redirect(url_for('user', username=username))
     current_user.follow(user)
     db.session.commit()
-    flash('You are following {}!'.format(username))
+    # flash('You are following {}!'.format(username))
+    flash(_('You are following %(username)!', username=username))
     return redirect(url_for('user', username=username))
 
 

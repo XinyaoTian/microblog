@@ -23,3 +23,7 @@ class Config(object):
     # determines how many items will be displayed per page
 
     POSTS_PER_PAGE = 3
+
+    # I18n & L10n
+    LANGUAGES = ['en', 'es']
+

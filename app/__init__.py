@@ -13,6 +13,10 @@ from flask_mail import Mail
 from flask_moment import Moment
 # Flask Bootstrap for web page
 from flask_bootstrap import Bootstrap
+# for I18n and L10n (Language translation)
+from flask_babel import Babel
+from flask import request
+from flask_babel import lazy_gettext as _l
 
 app = Flask(__name__)
 
@@ -30,6 +34,7 @@ login = LoginManager(app)
 
 # force login or the user will not view other pages
 login.login_view = 'login' # login url
+login.login_message = _l('Please log in to access this page.')
 
 # email support
 mail = Mail(app)
@@ -37,9 +42,20 @@ mail = Mail(app)
 # for web page
 bootstrap = Bootstrap(app)
 
-
 # timezone solution
 moment = Moment(app)
+
+# translation language
+babel = Babel(app)
+
+
+# The Babel instance provides a localeselector decorator.
+# The decorated function is invoked for each request to select
+# a language translation to use for that request.
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+
 
 # Using SMTP to send email
 if not app.debug:

@@ -58,6 +58,8 @@
 {% block scripts %}
     {{ super() }}
     {{ moment.include_moment() }}
+    <!--translate month in English-->
+    {{ moment.lang(g.locale) }}
 {% endblock %}
 
 {#<html>#}
