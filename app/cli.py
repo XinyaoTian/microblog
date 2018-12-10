@@ -4,6 +4,13 @@ import os
 import click
 
 # This file has been created for Command-Line Enhancements
+# To add new language, you use:
+# $ flask translate init <language-code>
+
+# To update all the languages after making changes to
+#  the _() and _l() language markers and compile them
+# $ flask translate update
+# $ flask translate compile
 
 
 @app.cli.group()

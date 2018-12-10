@@ -93,7 +93,7 @@
           <entry key="flaskenv" value="209" />
           <entry key="html" value="4207" />
           <entry key="log" value="1" />
-          <entry key="py" value="17980" />
+          <entry key="py" value="18015" />
           <entry key="txt" value="244" />
         </counts>
       </usages-collector>
@@ -102,21 +102,20 @@
           <entry key="HTML" value="4207" />
           <entry key="Ini" value="2" />
           <entry key="PLAIN_TEXT" value="454" />
-          <entry key="Python" value="18337" />
+          <entry key="Python" value="18372" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="35" column="59" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
+            <state relative-caret-position="150">
+              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <marker date="1544235726895" expanded="true" signature="1364:1439" ph="..." />
+                <marker date="1544403368363" expanded="true" signature="1407:1482" ph="..." />
               </folding>
             </state>
           </provider>
@@ -176,15 +175,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/cli.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="42" column="35" lean-forward="true" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <marker date="1544403022138" expanded="true" signature="166:171" ph="..." />
-                <marker date="1544403022138" expanded="true" signature="1219:1257" ph="..." />
+                <marker date="1544403624273" expanded="true" signature="199:204" ph="..." />
+                <marker date="1544403624273" expanded="true" signature="1252:1290" ph="..." />
               </folding>
             </state>
           </provider>
@@ -261,14 +260,14 @@
         <option value="$PROJECT_DIR$/app/templates/user.html" />
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/app/forms.py" />
-        <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/app/templates/404.html" />
         <option value="$PROJECT_DIR$/app/templates/_post.html" />
         <option value="$PROJECT_DIR$/babel.cfg" />
         <option value="$PROJECT_DIR$/app/routes.py" />
         <option value="$PROJECT_DIR$/app/templates/base.html" />
-        <option value="$PROJECT_DIR$/app/cli.py" />
         <option value="$PROJECT_DIR$/microblog.py" />
+        <option value="$PROJECT_DIR$/app/__init__.py" />
+        <option value="$PROJECT_DIR$/app/cli.py" />
       </list>
     </option>
   </component>
@@ -449,7 +448,7 @@
     <frame x="730" y="0" width="710" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28443113" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28443113" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -463,7 +462,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.502994" side_tool="true" weight="0.36746988" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.497006" visible="true" weight="0.36746988" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.497006" visible="true" weight="0.36746988" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -754,18 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/cli.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="42" column="35" lean-forward="true" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <marker date="1544403022138" expanded="true" signature="166:171" ph="..." />
-            <marker date="1544403022138" expanded="true" signature="1219:1257" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/microblog.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -778,11 +765,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="35" column="59" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
+        <state relative-caret-position="150">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1544235726895" expanded="true" signature="1364:1439" ph="..." />
+            <marker date="1544403368363" expanded="true" signature="1407:1482" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/cli.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <marker date="1544403624273" expanded="true" signature="199:204" ph="..." />
+            <marker date="1544403624273" expanded="true" signature="1252:1290" ph="..." />
           </folding>
         </state>
       </provider>
