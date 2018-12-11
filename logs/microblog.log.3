@@ -1,4 +1,4 @@
-2018-12-11 20:53:29,744 ERROR: Exception on / [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1761]
+2018-12-11 20:46:49,717 ERROR: Exception on / [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
@@ -47,12 +47,10 @@ Traceback (most recent call last):
     {%- block html %}
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
     {% block body -%}
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/Users/xinyaotian/Code/Python_Codes/flask_learning/microblog/app/templates/base.html", line 53, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/Users/xinyaotian/Code/Python_Codes/flask_learning/microblog/app/templates/errors/404.html", line 6, in block "app_content"
-    <p><a href="{{ url_for('welcome') }}">Back</a></p>
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/Users/xinyaotian/Code/Python_Codes/flask_learning/microblog/app/templates/base.html", line 19, in block "navbar"
+    <a class="navbar-brand" href="{{ url_for('welcome') }}">Microblog</a>
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/helpers.py", line 356, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2061, in handle_url_build_error
@@ -64,6 +62,3 @@ Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py", line 1776, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'welcome'. Did you mean 'main.welcome' instead?
-2018-12-11 20:55:03,548 INFO: Microblog startup [in /Users/xinyaotian/Code/Python_Codes/flask_learning/microblog/app/__init__.py:86]
-2018-12-11 20:58:08,013 INFO: Microblog startup [in /Users/xinyaotian/Code/Python_Codes/flask_learning/microblog/app/__init__.py:86]
-2018-12-11 20:59:04,079 INFO: Microblog startup [in /Users/xinyaotian/Code/Python_Codes/flask_learning/microblog/app/__init__.py:86]
