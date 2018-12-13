@@ -27,3 +27,6 @@ class Config(object):
     # I18n & L10n
     LANGUAGES = ['en', 'es']
 
+    # Integration of ElasticSearch
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
+

@@ -19,6 +19,8 @@ from flask import request
 from flask_babel import lazy_gettext as _l
 # for current_app.config
 from flask import current_app
+# Full text research
+from elasticsearch import Elasticsearch
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -33,7 +35,7 @@ babel = Babel()
 
 def create_app(config_class=Config):
     app = Flask(__name__)
-    app.config.from_object(Config)
+    app.config.from_object(config_class)
 
     db.init_app(app)
     migrate.init_app(app, db)
@@ -54,8 +56,18 @@ def create_app(config_class=Config):
     from app.auth import bp as auth_bp
     app.register_blueprint(auth_bp, url_prefix='/auth')
 
+    # for api functions
+    from app.api import bp as api_bp
+    app.register_blueprint(api_bp, url_prefix='/api')
+
     from app.main import bp as main_bp
-    app.register_blueprint(main_bp, url_prefix='/main')
+    # app.register_blueprint(main_bp, url_prefix='/main')
+    # Don't use url_prefix , or you will get a 404 in /
+    app.register_blueprint(main_bp)
+
+    # Integration of elasticsearch
+    app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) \
+        if app.config['ELASTICSEARCH_URL'] else None
 
     # Using SMTP to send email
     if not app.debug and not app.testing:
