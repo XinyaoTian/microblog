@@ -47,7 +47,7 @@
     <session id="-1528166716">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
@@ -112,7 +112,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
+            <state relative-caret-position="225">
               <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
               <folding>
                 <marker date="1544670401527" expanded="true" signature="976:3696" ph="..." />
@@ -334,6 +334,17 @@
               <item name="microblog" type="b2602c69:ProjectViewProjectNode" />
               <item name="microblog" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="microblog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="microblog" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="microblog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="microblog" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -491,8 +502,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09227468" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09227468" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -506,7 +518,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5035765" side_tool="true" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49642345" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49642345" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -782,13 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/api/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/api/users.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
@@ -851,9 +856,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
+        <state relative-caret-position="225">
           <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
           <folding>
             <marker date="1544670401527" expanded="true" signature="976:3696" ph="..." />

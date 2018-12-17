@@ -18,7 +18,7 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     # ADMINS = ['your-email@example.com']
-    ADMINS = ['leontian1024@gmail.com']
+    ADMINS = ['devops2048@gmail.com']
 
     # determines how many items will be displayed per page
 
